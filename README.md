@@ -1,79 +1,120 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Movie App
 
-# Getting Started
+## Project Description
+The React Native Movie App is a simple project that allows users to list their movie preferences. Users can select the movie categories they want and view corresponding movie recommendations based on their selections.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
+- **Firebase Authentication**:
+  - User registration with fields for First Name, Last Name, Email, Password (with confirm password), Address, and Profile Picture (from camera/gallery).
+  - Secure login functionality using email and password.
+  - Password validation and error handling.
 
-## Step 1: Start the Metro Server
+- **Dynamic Movie Lists**:
+  - Tabs for Now Playing, Popular, and Upcoming movies.
+  - Fetch and display movie posters, titles, and brief details from the TMDb API.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- **Favorites Management**:
+  - Add/remove movies to/from a favorites list stored in Firebase Firestore.
+  - Toggle favorite status with a visual icon.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- **Profile Management**:
+  - Upload and store user profile data and images in Firebase Firestore and Storage.
 
-```bash
-# using npm
-npm start
+- **Navigation**:
+  - Tabbed navigation using react-navigation and react-native-tab-view.
 
-# OR using Yarn
-yarn start
-```
+## Setup Instructions
 
-## Step 2: Start your Application
+### Steps to Clone the Repository
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/UGlakhana45/PracticleUday.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd PracticleUday
+   ```
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+### Requirements for Running the Project
 
-### For Android
+- **React Native Environment**:
+  - Follow the [React Native Environment Setup](https://reactnative.dev/docs/environment-setup) guide for your system.
 
-```bash
-# using npm
-npm run android
+- **Dependencies**:
+  - Install project dependencies:
+    ```bash
+    npm install
+    ```
 
-# OR using Yarn
-yarn android
-```
+- **Firebase Setup**:
+  1. Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
+  2. Enable Email/Password Authentication in the Firebase Authentication section.
+  3. Create a Firestore database and configure rules.
+  4. Set up Firebase Storage for profile picture uploads.
+  5. Download and add the `google-services.json` (for Android) and `GoogleService-Info.plist` (for iOS) to the respective platforms in your project.
 
-### For iOS
+### Running the Project
+1. Start the Metro bundler:
+   ```bash
+   npm start
+   ```
+2. Run the app:
+   - **For Android**:
+     ```bash
+     npx react-native run-android or npm run android
+     ```
+   - **For iOS**:
+     ```bash
+    npx react-native run-android or npm run ios 
+     ```
 
-```bash
-# using npm
-npm run ios
+## Usage
 
-# OR using Yarn
-yarn ios
-```
+- **Login and Registration**:
+  1. Register using the app with the required details.
+  2. Login using your email and password.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+- **Browsing Movies**:
+  - Navigate through the Now Playing, Popular, and Upcoming tabs to explore movies.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+- **Favorites Management**:
+  - Add movies to your favorites by clicking the favorite icon on a movie detail screen.
+  - View your favorite movies in the Favorites tab.
 
-## Step 3: Modifying your App
+## Tech Stack
 
-Now that you have successfully run the app, let's modify it.
+- **Frontend**:
+  - React Native
+  - React Navigation
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+- **Backend**:
+  - Firebase Authentication
+  - Firebase Firestore
+  - Firebase Storage
+  
+- **API**:
+  - TMDb API
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Screenshots
+1. Login Screen
+![Login Screen](src/assets/OutputScreenShots/2faab6d4-3721-4f2a-b92a-e0aba07029fa.JPEG)
 
-## Congratulations! :tada:
+2. Registration Screen
+![Registration Screen](src/assets/OutputScreenShots/cd6600d5-c7ee-411a-9c9d-16d283f7b37a.JPEG)
 
-You've successfully run and modified your React Native App. :partying_face:
+3. Home Screen (Now Playing, Popular, Upcoming)
+![Home Screens](src/assets/OutputScreenShots/dad07c8b-818b-41fc-820c-8b6441c3185f.JPEG)
+![Popular movies Screens](src/assets/OutputScreenShots/6567df01-23b2-4be7-8fa5-ff809e24dd7a.JPEG)
+![Upcoming movies Screens](src/assets/OutputScreenShots/ff026dbe-870e-4190-b0bc-34aed9e85504.JPEG)
 
-### Now what?
+4. Movie Details Screen
+![Movie Detail Screens](src/assets/OutputScreenShots/dd2e918b-7e48-4623-8b9d-4ddc33d364bb.JPEG)
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+5. Favorites Screen
+![Empty Favourite movies Screens](src/assets/OutputScreenShots/1f7a95cf-f4dc-499b-899e-3387425f70a5.JPEG)
+![Favourite movies Screens](src/assets/OutputScreenShots/cd2b3b6c-f63c-4784-8346-294f6e21b484.JPEG)
 
-# Troubleshooting
+6. Profile screen firebase limitation.
+![Additional requirements fro profile data upload](src/assets/OutputScreenShots/issueWithFileUpload.png)
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+---
