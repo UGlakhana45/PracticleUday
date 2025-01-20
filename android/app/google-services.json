@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "562960321903",
+    "project_id": "practicleuday-20fd8",
+    "storage_bucket": "practicleuday-20fd8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562960321903:android:c3d7ec4f236a5be5e46c9a",
+        "android_client_info": {
+          "package_name": "com.practicleuday"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ3XcHYoxQTtdjov8zK_Vmr5Kkq2FZFL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
